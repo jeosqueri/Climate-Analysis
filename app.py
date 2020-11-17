@@ -32,7 +32,9 @@ def home():
         f"Available Routes:<br/>"
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/tobs"
+        f"/api/v1.0/tobs<br/>"
+        f"/api/v1.0/<start><br/>"
+        f"/api/v1.0/<start>/<end>"
     )
 
 #Precipitation
@@ -82,6 +84,20 @@ def tobs():
     session.close()
 
     return jsonify(results)
+
+# #API START AND API END
+# @app.route("/api/v1.0/<start>")
+# def temp_by_start_date(Date):
+#     """Return a JSON list of TMIN, TAVG, and TMAX for all dates greater than
+#         or equal to the start date"""
+#     canonicalized = Date
+#     for date in all_measurements:
+#         search_term = date["Date"]
+
+#         if search_term == canonicalized:
+#             return jsonify(func.max(Measurement.tobs))
+#             return jsonify(func.min(Measurement.tobs))
+#             return jsonify(func.avg(Measurement.tobs))
 
 if __name__ == '__main__':
     app.run(debug=True)
