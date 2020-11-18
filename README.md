@@ -11,7 +11,7 @@ Precipitation Plot
 
 - Display the summary statistics for the precipitation data.
 
-<img width="180" alt="Screen Shot 2020-11-17 at 9 48 52 PM" src="https://user-images.githubusercontent.com/69160361/99486686-e8b88b00-2921-11eb-84b4-ec704ce494fb.png">
+<img width="154" alt="Screen Shot 2020-11-18 at 2 50 27 PM" src="https://user-images.githubusercontent.com/69160361/99592473-82794a00-29ad-11eb-827b-81bf5d84e139.png">
 
 ### Station Analysis
 
