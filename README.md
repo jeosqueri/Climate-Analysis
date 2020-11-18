@@ -12,7 +12,7 @@ Dataframe Describe
 
 Histogram
 
-![Histogram](https://user-images.githubusercontent.com/69160361/99486665-dc343280-2921-11eb-8646-6f4338b7c126.png)
+![Histogram](https://user-images.githubusercontent.com/69160361/99486930-6e3c3b00-2922-11eb-86a5-d987359a876b.png)
 
 Trip Temp Average
 
