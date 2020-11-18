@@ -86,7 +86,7 @@ def tobs():
     return jsonify(results)
 
 #API START AND API END
-#START SEARCH
+#Define function for querying based on start date, and returning TMAX, TMIN, and TAVG
 def start_temps_calc(start_date):
 
     session = Session(engine)
@@ -94,7 +94,7 @@ def start_temps_calc(start_date):
     return session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
         filter(Measurement.date >= start_date).all()
 
-
+#Set app route and create dictionary for query values, and jsonify the dictionary response
 @app.route("/api/v1.0/<start>")
 def start_date(start):
     starting_temp = start_temps_calc(start)
@@ -107,13 +107,14 @@ def start_date(start):
 
     return jsonify(temp_dict)
 
-#START AND END SEARCH
+#Define function for querying based on start and end date, and returning TMIN, TMAX, and TAVG
 def temps_calc(start_date, end_date):
     session = Session(engine)
 
     return session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
         filter(Measurement.date >= start_date).filter(Measurement.date <= end_date).all()
 
+#Set app route and create dictionary for query values, and jsonify response
 @app.route("/api/v1.0/<start>/<end>")
 def start_end_date(start, end):
     start_end_temps = temps_calc(start, end)
@@ -122,7 +123,7 @@ def start_end_date(start, end):
     min_t = all_temps[0]
     avg_t = all_temps[1]
     max_t = all_temps[2]
-    all_temp_dict = {'Min Temp': min_t, 'Max Temp': max_t, 'Avg Temp': avg_t}
+    all_temp_dict = {'Min Temp': min_t, 'Max Temp': max_t, 'Avg Temp': avg_t, 'Start Date': start, 'End Date': end}
 
     return jsonify(all_temp_dict)
      
