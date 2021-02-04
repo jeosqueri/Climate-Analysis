@@ -1,5 +1,3 @@
-# sqlalchemy_challenge
-
 ## Climate Analysis and Exploration
 ### Precipitation Analysis
 
